@@ -39,6 +39,9 @@ class SubscriptionTableViewController: UITableViewController {
                 //получаем группу по индексу
                 let addGroup = allGroupsController.allGroupsMassive[indexPath.row]
                 //
+                for i in groupsMassive{
+                    print(i.name + " что это?")
+                }
                     groupsMassive.append(addGroup)
                 }
                 //обновляем таблицу
