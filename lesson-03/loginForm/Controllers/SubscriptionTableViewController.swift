@@ -12,9 +12,7 @@ class SubscriptionTableViewController: UITableViewController {
 
     
     var groupsMassive = [
-        
         groups(name: "party", imageGroups: UIImage(named: "party")!)
-        
     ]
     
     
@@ -30,19 +28,23 @@ class SubscriptionTableViewController: UITableViewController {
     
     //сигуэй при выходе с контроллера, добавление элементов на другой контролллер
     @IBAction func addGroup(segue: UIStoryboardSegue) {
-
+        var nameGroups = [String]() //массив для перебора имен в массиве groupsMassive
+        for i in groupsMassive{
+            nameGroups.append(i.name)
+        }
         if segue.identifier == "addGroup"  {
             // Ссылка на контроллер с которого переход
             guard let allGroupsController = segue.source as? AllGroupsTableController else { return }
             //получаем индекс ячейки с массива
-            if let indexPath = allGroupsController.tableView.indexPathForSelectedRow {
+                if let indexPath = allGroupsController.tableView.indexPathForSelectedRow {
                 //получаем группу по индексу
-                let addGroup = allGroupsController.allGroupsMassive[indexPath.row]
-                //
-                for i in groupsMassive{
-                    print(i.name + " что это?")
-                }
-                    groupsMassive.append(addGroup)
+                    let addGroup = allGroupsController.allGroupsMassive[indexPath.row]
+                // добавляем в массив
+                        let nameAllGroup = addGroup.name
+                        if !nameGroups.contains(nameAllGroup) {
+                            groupsMassive.append(addGroup)
+                            print("Добавлен элемент: " + nameAllGroup)
+                        }
                 }
                 //обновляем таблицу
                 tableView.reloadData()
@@ -52,10 +54,12 @@ class SubscriptionTableViewController: UITableViewController {
         
     //функция удаления элементов
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let nameGroup = groupsMassive[indexPath.row]
         // Если была нажата кнопка «Удалить»
         if editingStyle == .delete {
         // Удаляем  из массива
             groupsMassive.remove(at: indexPath.row)
+            print("Удален элемент: " + nameGroup.name)
         // И удаляем строку из таблицы
             tableView.deleteRows(at: [indexPath], with: .fade)
         }

@@ -15,7 +15,7 @@ class FriendsTableViewController: UITableViewController {
         friends(name: "Viktor Funduk", imageFriends: UIImage(named: "1111")!),
         friends(name: "Skala Jony", imageFriends: UIImage(named: "Jony")!),
         friends(name: "Ben Ten", imageFriends: UIImage(named: "Ben")!),
-        friends(name: "Jessica Alba", imageFriends: UIImage(named: "Jessica")!),
+        friends(name: "Jessica Alba", imageFriends: UIImage(named: "Jessica")!)
     ]
     
 
@@ -72,10 +72,13 @@ class FriendsTableViewController: UITableViewController {
 
     
     // Override to support editing the table view.
+    //функция удаления эллементов
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let nameFriend = friendsMassive[indexPath.row]
         if editingStyle == .delete {
             // Delete the row from the data source
             friendsMassive.remove(at: indexPath.row)
+            print("Удален друг: " + nameFriend.name + " ((((")
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
