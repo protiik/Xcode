@@ -1,5 +1,5 @@
 //
-//  Groups.swift
+//  friendsStruct.swift
 //  loginForm
 //
 //  Created by prot on 11/02/2020.
@@ -9,7 +9,8 @@
 import UIKit
 
 
-struct groups {
+struct Friend {
     let name: String
-    let imageGroups: UIImage
+    let imageFriends: UIImage
 }
+

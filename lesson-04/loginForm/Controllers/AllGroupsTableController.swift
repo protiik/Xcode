@@ -12,12 +12,12 @@ class AllGroupsTableController: UITableViewController {
 
     var allGroupsMassive = [
         
-        groups(name: "party", imageGroups: UIImage(named: "party")!),
-        groups(name: "Мохнатая мышь", imageGroups: UIImage(named: "мышь")!),
-        groups(name: "Справедливый выбор", imageGroups: UIImage(named: "справ")!),
-        groups(name: "Мощные ребята", imageGroups: UIImage(named: "мощь")!),
-        groups(name: "Траншея моего отца", imageGroups: UIImage(named: "траншея")!),
-        groups(name: "Человек vs гепард", imageGroups: UIImage(named: "гепард")!)
+        Group(name: "party", imageGroups: UIImage(named: "party")!),
+        Group(name: "Мохнатая мышь", imageGroups: UIImage(named: "мышь")!),
+        Group(name: "Справедливый выбор", imageGroups: UIImage(named: "справ")!),
+        Group(name: "Мощные ребята", imageGroups: UIImage(named: "мощь")!),
+        Group(name: "Траншея моего отца", imageGroups: UIImage(named: "траншея")!),
+        Group(name: "Человек vs гепард", imageGroups: UIImage(named: "гепард")!)
     
     ]
     
@@ -45,7 +45,7 @@ class AllGroupsTableController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupsCell", for: indexPath) as? GroupsCell else {
-            preconditionFailure("Cant dequere CityCell")
+            preconditionFailure("Нет связи с GroupsCell")
         }
 
         let allGroup = allGroupsMassive[indexPath.row]

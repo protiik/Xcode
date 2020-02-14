@@ -12,7 +12,7 @@ class SubscriptionTableViewController: UITableViewController {
 
     
     var groupsMassive = [
-        groups(name: "party", imageGroups: UIImage(named: "party")!)
+        Group(name: "party", imageGroups: UIImage(named: "party")!)
     ]
     
     
@@ -81,7 +81,7 @@ class SubscriptionTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupsCell", for: indexPath) as? GroupsCell else {
-            preconditionFailure("Cant dequere CityCell")
+            preconditionFailure("No connect GroupCell")
         }
 
             let subscriptionName = groupsMassive[indexPath.row]

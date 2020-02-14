@@ -8,38 +8,55 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController{
+    
+    struct Section {
+        let letter: String
+        let names: [String]
+        let image: [String]
+    }
+    var sections = [Section]()
     
     var friendsMassive =  [
-        friends(name: "Vlad Miller", imageFriends: UIImage(named: "Глаза1")!),
-        friends(name: "Viktor Funduk", imageFriends: UIImage(named: "1111")!),
-        friends(name: "Skala Jony", imageFriends: UIImage(named: "Jony")!),
-        friends(name: "Ben Ten", imageFriends: UIImage(named: "Ben")!),
-        friends(name: "Jessica Alba", imageFriends: UIImage(named: "Jessica")!)
+        Friend(name: "Vlad Miller", imageFriends: UIImage(named: "Глаза1")!),
+        Friend(name: "Viktor Funduk", imageFriends: UIImage(named: "1111")!),
+        Friend(name: "Skala Jony", imageFriends: UIImage(named: "Jony")!),
+        Friend(name: "Ben Ten", imageFriends: UIImage(named: "Ben")!),
+        Friend(name: "Jessica Alba", imageFriends: UIImage(named: "Jessica")!)
     ]
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        /*var imageFriend = [String]()
+        var nameFriend = [String]()
+        for i in friendsMassive{
+            nameFriend.append(i.name)
+            imageFriend.append(i.imageFriends:)
+        }
+        //Сортировка
+        let groupedDictionary = Dictionary(grouping: nameFriend, by: {String($0.prefix(1))})
+        print(groupedDictionary)
+        let keys = groupedDictionary.keys.sorted()
+        
+        sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted(), image: imageFriend[$0])) }
+        self.tableView.reloadData()
+        print(sections)
+        //Сортировка*/
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+    
         
     }
+        
+        
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
@@ -51,15 +68,19 @@ class FriendsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsCell", for: indexPath) as? FriendsCell else {
-            preconditionFailure("Cant dequere CityCell")
+            preconditionFailure("нет связи FriendsCell")
         }
-
+        
         let friend = friendsMassive[indexPath.row] //id
         cell.friendNameLabel.text = friend.name // имя
-        cell.imageFriendView.image = friend.imageFriends //картинка
-
+        cell.imageFriendView.image = friend.imageFriends
+        //cell.imageFriendView.image = friend.imageFriends //картинка
+        
+        
         return cell
     }
+    
+    
     
 
     /*
@@ -74,6 +95,7 @@ class FriendsTableViewController: UITableViewController {
     // Override to support editing the table view.
     //функция удаления эллементов
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         let nameFriend = friendsMassive[indexPath.row]
         if editingStyle == .delete {
             // Delete the row from the data source
@@ -117,3 +139,4 @@ class FriendsTableViewController: UITableViewController {
     
 
 }
+

@@ -17,7 +17,6 @@ class LoginFormController: UIViewController {
       
       
       
-      
         override func viewDidLoad() {
               super.viewDidLoad()
               // Do any additional setup after loading the view.
@@ -65,6 +64,7 @@ class LoginFormController: UIViewController {
       
           override func viewWillAppear(_ animated: Bool) {
                  super.viewWillAppear(animated)
+            
             //скрыть navigation bar
             navigationController?.setNavigationBarHidden(true, animated: false)
                  

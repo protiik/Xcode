@@ -11,7 +11,7 @@ import UIKit
 
 
 class FriendCollectionController: UICollectionViewController {
-
+    
         var collectionFriendName: String?
         var collectionFriendImage: UIImage?
         
@@ -44,7 +44,7 @@ class FriendCollectionController: UICollectionViewController {
 
         override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
             // #warning Incomplete implementation, return the number of items
-            return 20
+            return 1
         }
 
         override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -54,6 +54,10 @@ class FriendCollectionController: UICollectionViewController {
         
             return cell
         }
+    
+    
+    
+    
 
         // MARK: UICollectionViewDelegate
 
