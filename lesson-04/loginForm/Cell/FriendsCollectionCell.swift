@@ -21,8 +21,8 @@ class FriendsCollectionCell: UICollectionViewCell {
         
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))
+      
         likeImage.isUserInteractionEnabled = true
-        
         likeImage.addGestureRecognizer(tapGesture)
             
         
@@ -47,9 +47,7 @@ class FriendsCollectionCell: UICollectionViewCell {
                 countLikeLabel.textColor = .black
                 print("- Like")
         }
-        
-        }
     
-        
     }
     
+}
