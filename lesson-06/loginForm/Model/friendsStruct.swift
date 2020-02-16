@@ -13,4 +13,11 @@ struct Friend {
     let name: String
     let imageFriends: UIImage
 }
-
+struct Section {
+    var letter: String
+    var names: [String]
+}
+struct Search {
+    var letter: String
+    var names: [String]
+}

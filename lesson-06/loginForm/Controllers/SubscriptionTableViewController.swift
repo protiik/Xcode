@@ -10,21 +10,24 @@ import UIKit
 
 class SubscriptionTableViewController: UITableViewController {
 
+    @IBOutlet weak var searBarGroup:UISearchBar!
     
     var groupsMassive = [
-        Group(name: "party", imageGroups: UIImage(named: "party")!)
+        Group(name: "Party", imageGroups: UIImage(named: "party")!)
     ]
-    
+    var searching = false
+    var searchAns = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+            
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    
     
     //сигуэй при выходе с контроллера, добавление элементов на другой контролллер
     @IBAction func addGroup(segue: UIStoryboardSegue) {
@@ -51,7 +54,7 @@ class SubscriptionTableViewController: UITableViewController {
                 
             }
         }
-        
+    
     //функция удаления элементов
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         let nameGroup = groupsMassive[indexPath.row]
@@ -68,14 +71,19 @@ class SubscriptionTableViewController: UITableViewController {
     
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 1
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return groupsMassive.count
+        if searching{
+            return searchAns.count
+        }else{
+            return groupsMassive.count
+        }
+        
     }
 
     
@@ -83,10 +91,19 @@ class SubscriptionTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupsCell", for: indexPath) as? GroupsCell else {
             preconditionFailure("No connect GroupCell")
         }
-
+        if searching{
+            let subscriptionName = searchAns[indexPath.row]
+            cell.groupNameLabel.text = subscriptionName
+            for i in groupsMassive {
+                if subscriptionName == i.name{
+                    cell.groupImageView.image = i.imageGroups
+                }
+            }
+        }else {
             let subscriptionName = groupsMassive[indexPath.row]
             cell.groupNameLabel.text = subscriptionName.name
             cell.groupImageView.image = subscriptionName.imageGroups
+        }
 
         return cell
     }
@@ -136,4 +153,26 @@ class SubscriptionTableViewController: UITableViewController {
     }
     */
 
+}
+extension SubscriptionTableViewController:UISearchBarDelegate{
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
+        
+            let searchMassive = groupsMassive.map {$0.name}
+        
+            searchAns = searchMassive.filter({$0.prefix(searchText.count) == searchText})
+            
+            searching = true
+            print(searchAns)
+            tableView.reloadData()
+       }
+    
+        func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+            searching = false
+            searBarGroup.text = ""
+            tableView.reloadData()
+        }
+    
+    
 }

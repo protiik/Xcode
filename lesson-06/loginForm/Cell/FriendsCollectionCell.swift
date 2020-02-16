@@ -21,8 +21,8 @@ class FriendsCollectionCell: UICollectionViewCell {
         
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))
+      
         likeImage.isUserInteractionEnabled = true
-        
         likeImage.addGestureRecognizer(tapGesture)
             
         
@@ -47,9 +47,17 @@ class FriendsCollectionCell: UICollectionViewCell {
                 countLikeLabel.textColor = .black
                 print("- Like")
         }
-        
-        }
     
+    }
+    
+    // Стартовые значения аутлетов при переиспользовании ячейки
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        friendImageView.image = nil
+        likeImage.image = nil
+        countLikeLabel.text = nil
         
     }
     
+}

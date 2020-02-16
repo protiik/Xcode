@@ -10,20 +10,24 @@ import UIKit
 
 class FriendsCell: UITableViewCell {
     
-    
+    @IBOutlet weak var shadowView:ShadowView!
     @IBOutlet weak var friendNameLabel: UILabel!
     @IBOutlet weak var imageFriendView: UIImageView!
-    @IBOutlet weak var shadowView: ShadowView!
-    @IBOutlet weak var sortAlphabetLabel:UILabel!
+    
     
     override func layoutSublayers(of layer: CALayer) {
         imageFriendView.layer.cornerRadius = 35
-        shadowView.configure()
-        
-        
-        
-        
-    }
+        shadowView.backgroundColor = .red
+        shadowView.animation()
+   }
+    
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+//        
+//        friendNameLabel.text = nil
+//        imageFriendView.image = nil
+//        
+//    }
     
 }
 
@@ -32,18 +36,17 @@ class FriendsCell: UITableViewCell {
     @IBInspectable var color:UIColor = .black
     @IBInspectable var opacity:Float = 1
     @IBInspectable var radius:CGFloat = 10
-    
-     func configure() {
-           
+
+     func animation() {
             layer.cornerRadius = 34
             layer.shadowColor = color.cgColor
             layer.shadowOpacity = opacity
-            layer.shadowOffset = .zero
+            layer.shadowOffset = CGSize(width: 4, height: 4)
             layer.shadowRadius = radius
             backgroundColor = .white
-        
+
        }
-    
+
 }
 
 

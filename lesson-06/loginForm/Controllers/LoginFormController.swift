@@ -14,17 +14,21 @@ class LoginFormController: UIViewController {
     @IBOutlet weak var textFieldLogin: UITextField!
     @IBOutlet weak var textFieldPass: UITextField!
     @IBOutlet weak var labelLogin: UILabel!
+    @IBOutlet weak var buttonIn : UIButton!
       
       
       
         override func viewDidLoad() {
-              super.viewDidLoad()
+                super.viewDidLoad()
               // Do any additional setup after loading the view.
-              let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)) //переменная для закрытия клавитуры при тапе
-              scrollView.addGestureRecognizer(tapGesture) // закрытие клавитуры
+                let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)) //переменная для закрытия клавитуры при тапе
+                scrollView.addGestureRecognizer(tapGesture) // закрытие клавитуры
+            
+            
+                buttonIn.layer.cornerRadius = 20
           }
           
-      
+        // Ошибка авторизации
         func showInError() {
           
           let alertVC = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
@@ -62,16 +66,16 @@ class LoginFormController: UIViewController {
           
         }
       
-          override func viewWillAppear(_ animated: Bool) {
+        override func viewWillAppear(_ animated: Bool) {
                  super.viewWillAppear(animated)
             
-            //скрыть navigation bar
-            navigationController?.setNavigationBarHidden(true, animated: false)
+                //скрыть navigation bar
+                navigationController?.setNavigationBarHidden(true, animated: false)
                  
-              // Подписываемся на два уведомления: одно приходит при появлении клавиатуры
+                // Подписываемся на два уведомления: одно приходит при появлении клавиатуры
 
                  NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShown(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-              // Второе — когда она пропадает
+                // Второе — когда она пропадает
                  NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
           }
           // Когда клавиатура появляется
@@ -96,7 +100,7 @@ class LoginFormController: UIViewController {
               self.scrollView.endEditing(true)
           }
     
-        //выход на стартовую сигу
+        //выход на cnfhnjdsq контроллер
           @IBAction func exit(unwindSegue: UIStoryboardSegue) {
           print("Welocme back")
           }

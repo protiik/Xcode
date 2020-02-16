@@ -13,4 +13,16 @@ class GroupsCell: UITableViewCell {
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var groupImageView: UIImageView!
 
+    override func layoutSubviews() {
+        groupImageView.layer.cornerRadius = 42
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        groupNameLabel.text = nil
+        groupImageView.image = nil
+        
+    }
+        
 }

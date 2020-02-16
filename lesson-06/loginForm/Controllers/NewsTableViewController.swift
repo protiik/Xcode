@@ -1,29 +1,20 @@
 //
-//  AllGroupsTableController.swift
+//  NewsTableViewController.swift
 //  loginForm
 //
-//  Created by prot on 10/02/2020.
+//  Created by prot on 22/02/2020.
 //  Copyright © 2020 prot. All rights reserved.
 //
 
 import UIKit
 
-class AllGroupsTableController: UITableViewController {
+class NewsTableViewController: UITableViewController {
 
-    var allGroupsMassive = [
-        
-        Group(name: "party", imageGroups: UIImage(named: "party")!),
-        Group(name: "Мохнатая мышь", imageGroups: UIImage(named: "мышь")!),
-        Group(name: "Справедливый выбор", imageGroups: UIImage(named: "справ")!),
-        Group(name: "Мощные ребята", imageGroups: UIImage(named: "мощь")!),
-        Group(name: "Траншея моего отца", imageGroups: UIImage(named: "траншея")!),
-        Group(name: "Человек vs гепард", imageGroups: UIImage(named: "гепард")!)
-    
-    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        tableView.register(UINib(nibName: "NewsHeaderClass", bundle: nil), forHeaderFooterViewReuseIdentifier: "HeaderNewsView")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -38,31 +29,30 @@ class AllGroupsTableController: UITableViewController {
         return 1
     }
 
+    
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return allGroupsMassive.count
+        return 1
     }
 
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderNewsView") as? NewsHeaderClass else {
+        preconditionFailure("нет связи HeaderView")
+        }
+        return headerView
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupsCell", for: indexPath) as? GroupsCell else {
-            preconditionFailure("Нет связи с GroupsCell")
+        guard  let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as? NewsCellTableViewCell else {
+            preconditionFailure("нет связи NewsCell")
         }
 
-        let allGroup = allGroupsMassive[indexPath.row]
-        cell.groupNameLabel.text = allGroup.name
-        cell.groupImageView.image = allGroup.imageGroups
+         
 
         return cell
     }
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
