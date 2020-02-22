@@ -48,12 +48,12 @@ class FriendsTableViewController: UITableViewController{
     var nameFriend = [String]()
     var searching = false
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "TestTableViewHeader", bundle: nil), forHeaderFooterViewReuseIdentifier: "HeaderView")
-  
+        
         for i in friendsMassive{
             nameFriend.append(i.name)
         }
@@ -77,8 +77,8 @@ class FriendsTableViewController: UITableViewController{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
-    
+        
+        
         
     }
     
@@ -86,7 +86,7 @@ class FriendsTableViewController: UITableViewController{
     
     
     
-
+    
     // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -94,12 +94,12 @@ class FriendsTableViewController: UITableViewController{
         if searching {
             return searchFriend.count
         }else {
-             return sections.count
+            return sections.count
         }
         
         
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if searching {
@@ -108,7 +108,7 @@ class FriendsTableViewController: UITableViewController{
             return sections[section].names.count
         }
     }
-
+    
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "HeaderView") as? TestTableViewHeader else {
             preconditionFailure("нет связи HeaderView")
@@ -118,9 +118,9 @@ class FriendsTableViewController: UITableViewController{
         }else {
             headerView.someLabel.text = sections[section].letter
         }
-            
-            return headerView
-        }
+        
+        return headerView
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FriendsCell", for: indexPath) as? FriendsCell else {
@@ -153,10 +153,10 @@ class FriendsTableViewController: UITableViewController{
         return cell
     }
     
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        return sections[section].letter
-//    }
-//
+    //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+    //        return sections[section].letter
+    //    }
+    //
     override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
         if searching {
             return searchFriend.compactMap{$0.letter.uppercased()}
@@ -166,58 +166,58 @@ class FriendsTableViewController: UITableViewController{
         
     }
     
-
+    
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
+     // Override to support conditional editing of the table view.
+     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
     
     // Override to support editing the table view.
     //функция удаления эллементов свайпом
-//    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        var section = sections[indexPath.section]
-//        var nameFriend = section.names[indexPath.row]
-//        if editingStyle == .delete {
-//            // Delete the row from the data source
-//
-//            sections.remove(at: indexPath.section)
-//            print("Удален друг: " + String(nameFriend) + " ((((")
-//            tableView.deleteRows(at: [IndexPath(row : indexPath.row, section : indexPath.section)], with: .fade)
-//            tableView.reloadData()
-//        }
-//    }
-
+    //    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //        var section = sections[indexPath.section]
+    //        var nameFriend = section.names[indexPath.row]
+    //        if editingStyle == .delete {
+    //            // Delete the row from the data source
+    //
+    //            sections.remove(at: indexPath.section)
+    //            print("Удален друг: " + String(nameFriend) + " ((((")
+    //            tableView.deleteRows(at: [IndexPath(row : indexPath.row, section : indexPath.section)], with: .fade)
+    //            tableView.reloadData()
+    //        }
+    //    }
+    
     /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
+     // Override to support rearranging the table view.
+     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+     
+     }
+     */
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+     // Override to support conditional rearranging of the table view.
+     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     //Иницилизация при переходе с индификатором
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
+        
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
         if segue.identifier == "Show Friends",
             let indexPath = tableView.indexPathForSelectedRow {
-
+            
             if searching {
                 let section = searchFriend[indexPath.section] // id элемента
                 let titleFriendName = section.names[indexPath.row]
@@ -245,7 +245,7 @@ class FriendsTableViewController: UITableViewController{
         }
     }
     
-
+    
 }
 // Поиск, реализация ху-вая но я по другому неумею
 extension FriendsTableViewController : UISearchBarDelegate {
@@ -256,30 +256,35 @@ extension FriendsTableViewController : UISearchBarDelegate {
         for i in friendsMassive{
             searchMassive.append(i.name)
         }
-            //Поиск
-            searchAns = searchMassive.filter({$0.prefix(searchText.count) == searchText})
-            //Сортировка под новую структуру
-            let groupedDictionary = Dictionary(grouping: searchAns, by: {String($0.prefix(1))})
-            let keys = groupedDictionary.keys.sorted()
-            searchFriend = keys.map{ Search(letter: $0, names: groupedDictionary[$0]!.sorted()) }
-            
-            
-            searching = true
-            print(searchAns)
-            tableView.reloadData()
+        //Поиск
+        searchAns = searchMassive.filter({$0.prefix(searchText.count) == searchText})
+        //Сортировка под новую структуру
+        let groupedDictionary = Dictionary(grouping: searchAns, by: {String($0.prefix(1))})
+        let keys = groupedDictionary.keys.sorted()
+        searchFriend = keys.map{ Search(letter: $0, names: groupedDictionary[$0]!.sorted()) }
+        
+        
+        searching = true
+        print(searchAns)
+        tableView.reloadData()
         
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
+        hideKeyboard()
         searching = false
         searchBar.text = ""
         tableView.reloadData()
-
+        
     }
-//    func buttonTapped(){
-//        searchBar.resignFirstResponder()
-//    }
+    //Закрыть клавиатуру
+    @objc func hideKeyboard() {
+        self.searhBar.endEditing(true)
+    }
+    
+    
+    
     
     
 }

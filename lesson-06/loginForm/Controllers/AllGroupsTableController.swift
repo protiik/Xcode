@@ -160,9 +160,14 @@ extension AllGroupsTableController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         
+        hideKeyboard()
         searching = false
         searchBarAllGroup.text = ""
         tableView.reloadData()
+    }
+    
+    @objc func hideKeyboard() {
+        self.searchBarAllGroup.endEditing(true)
     }
     
 }

@@ -168,11 +168,14 @@ extension SubscriptionTableViewController:UISearchBarDelegate{
        }
     
         func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        
+            
+            hideKeyboard()
             searching = false
             searBarGroup.text = ""
             tableView.reloadData()
         }
     
-    
+        @objc func hideKeyboard() {
+            self.searBarGroup.endEditing(true)
+        }
 }
