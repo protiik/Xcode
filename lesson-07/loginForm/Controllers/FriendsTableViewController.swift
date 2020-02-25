@@ -257,7 +257,7 @@ extension FriendsTableViewController : UISearchBarDelegate {
             searchMassive.append(i.name)
         }
         //Поиск
-        searchAns = searchMassive.filter({$0.prefix(searchText.count) == searchText})
+        searchAns = searchMassive.filter({$0.contains(searchText)})
         //Сортировка под новую структуру
         let groupedDictionary = Dictionary(grouping: searchAns, by: {String($0.prefix(1))})
         let keys = groupedDictionary.keys.sorted()

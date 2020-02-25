@@ -23,8 +23,7 @@ class LoginFormController: UIViewController {
               // Do any additional setup after loading the view.
                 let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)) //переменная для закрытия клавитуры при тапе
                 scrollView.addGestureRecognizer(tapGesture) // закрытие клавитуры
-            
-            
+                
                 buttonIn.layer.cornerRadius = 20
           }
           
