@@ -35,7 +35,7 @@ class FriendsCollectionCell: UICollectionViewCell {
             count+=1
             countLikeLabel.text = "\(count)"
             print("Like")
-            UIView.transition(with: likeImage, duration: 1.0, options: .transitionCrossDissolve, animations: {
+            UIView.transition(with: likeImage, duration: 0.5, options: .transitionCrossDissolve, animations: {
                 self.likeImage.image = UIImage(systemName: "heart.fill")
                 like?.tintColor = .red
             })
@@ -48,7 +48,7 @@ class FriendsCollectionCell: UICollectionViewCell {
             count = 0
             countLikeLabel.text = "\(count)"
             print("- Like")
-            UIView.transition(with: likeImage, duration: 1.0, options: .transitionCrossDissolve, animations: {
+            UIView.transition(with: likeImage, duration: 0.5, options: .transitionCrossDissolve, animations: {
                 self.likeImage.image = UIImage(systemName: "heart")
                 like?.tintColor = .blue
             })
