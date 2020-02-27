@@ -26,18 +26,18 @@ class SettingsViewController: UIViewController {
         loadView2.layer.cornerRadius = 10
         loadView3.layer.cornerRadius = 10
         
-        UIView.animate(withDuration: 1, delay: 0, options: [.repeat, .autoreverse], animations: {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.repeat, .autoreverse], animations: {
             self.loadView1.alpha = 0.5
-            self.loadView1.backgroundColor = .red
+    
         })
-        UIView.animate(withDuration: 1, delay: 0.5, options: [.repeat, .autoreverse], animations: {
+        UIView.animate(withDuration: 0.4, delay: 0.2, options: [.repeat, .autoreverse], animations: {
             self.loadView2.alpha = 0.5
-            self.loadView2.backgroundColor = .red
+            
             
         })
-        UIView.animate(withDuration: 1, delay: 1.0, options: [.repeat, .autoreverse], animations: {
+        UIView.animate(withDuration: 0.4, delay: 0.3, options: [.repeat, .autoreverse], animations: {
             self.loadView3.alpha = 0.5
-            self.loadView3.backgroundColor = .red
+        
             
         })
     }

@@ -14,10 +14,6 @@ class FriendsTableViewController: UITableViewController{
     
     @IBOutlet weak var searhBar: UISearchBar!
     
-    
-    
-    
-    
     var sections = [Section]()
     var searchFriend = [Search]()
     

@@ -35,11 +35,27 @@ class FriendsCollectionCell: UICollectionViewCell {
             count+=1
             countLikeLabel.text = "\(count)"
             print("Like")
-            UIView.transition(with: likeImage, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            //пружинка
+            UIView.animate(withDuration: 0.5,
+                                 delay: 0,
+                                 usingSpringWithDamping: 0.2,
+                                 initialSpringVelocity: 15,
+                                 animations: {
+                                  self.likeImage.transform = .init(scaleX: 0.8, y: 0.8)
+                  })
+            //возврат размера
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           animations: {
+                            self.likeImage.transform = .init(scaleX: 1, y: 1)
+            })
+            //смена цвета
+            UIView.transition(with: likeImage, duration: 0.1, options: .transitionCrossDissolve, animations: {
                 self.likeImage.image = UIImage(systemName: "heart.fill")
                 like?.tintColor = .red
             })
-            UIView.transition(with: countLikeLabel, duration: 1.0, options: .transitionCrossDissolve, animations: {
+            //смена цвета лейбла
+            UIView.transition(with: countLikeLabel, duration: 0.1, options: .transitionCrossDissolve, animations: {
                 self.countLikeLabel.textColor = .red
             })
             
@@ -48,11 +64,26 @@ class FriendsCollectionCell: UICollectionViewCell {
             count = 0
             countLikeLabel.text = "\(count)"
             print("- Like")
-            UIView.transition(with: likeImage, duration: 0.5, options: .transitionCrossDissolve, animations: {
+            //
+            UIView.animate(withDuration: 0.5,
+                                 delay: 0,
+                                 usingSpringWithDamping: 0.2,
+                                 initialSpringVelocity: 15,
+                                 animations: {
+                                  self.likeImage.transform = .init(scaleX: 0.8, y: 0.8)
+                  })
+            //
+            UIView.animate(withDuration: 0.5,
+                           delay: 0,
+                           animations: {
+                            self.likeImage.transform = .init(scaleX: 1, y: 1)
+            })
+            //
+            UIView.transition(with: likeImage, duration: 0.1, options: .transitionCrossDissolve, animations: {
                 self.likeImage.image = UIImage(systemName: "heart")
                 like?.tintColor = .blue
             })
-            UIView.transition(with: countLikeLabel, duration: 1.0, options: .transitionCrossDissolve, animations: {
+            UIView.transition(with: countLikeLabel, duration: 0.1, options: .transitionCrossDissolve, animations: {
                 self.countLikeLabel.textColor = .black
             })
             

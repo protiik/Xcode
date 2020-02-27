@@ -337,12 +337,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="110"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec1-qL-DhD">
-                                            <rect key="frame" x="109" y="25" width="285" height="65"/>
-                                            <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GL-gl-Ev7" customClass="ShadowView" customModule="loginForm" customModuleProvider="target">
                                             <rect key="frame" x="20" y="21" width="69" height="69"/>
                                             <subviews>
@@ -372,6 +366,12 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ec1-qL-DhD">
+                                            <rect key="frame" x="109" y="25" width="285" height="65"/>
+                                            <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Ec1-qL-DhD" secondAttribute="trailing" priority="998" constant="20" id="8uL-0a-wtg"/>
@@ -749,7 +749,7 @@
                         <barButtonItem key="rightBarButtonItem" tag="1" title="Выйти" id="Gfy-aG-Oqn">
                             <inset key="largeContentSizeImageInsets" minX="5" minY="1" maxX="0.0" maxY="3"/>
                             <connections>
-                                <segue destination="5MQ-EV-ap1" kind="unwind" unwindAction="exitWithUnwindSegue:" id="piV-Jg-fFY"/>
+                                <segue destination="5MQ-EV-ap1" kind="unwind" unwindAction="exitWithUnwindSegue:" id="DrS-BV-rXm"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

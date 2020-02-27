@@ -16,31 +16,34 @@ class FriendsCell: UITableViewCell {
     
     override func layoutSublayers(of layer: CALayer) {
         imageFriendView.layer.cornerRadius = 35
-        shadowView.backgroundColor = .red
+        shadowView.backgroundColor = .white
         shadowView.animation()
         
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))
         imageFriendView.isUserInteractionEnabled = true
         imageFriendView.addGestureRecognizer(tapGesture)
-
+        
     }
     
     @objc func onTap(_ sender: UITapGestureRecognizer){
         print("Сжимаем картинку")
         
-        UIView.animate(withDuration: 1,
+        UIView.animate(withDuration: 0.7,
                        delay: 0,
-                       usingSpringWithDamping: 0.8,
-                       initialSpringVelocity: 10,
+                       usingSpringWithDamping: 0.3,
+                       initialSpringVelocity: 20,
                        animations: {
-                        self.shadowView.transform = .init(scaleX: 0.9, y: 0.9)
+                        self.shadowView.transform = .init (scaleX: 0.85, y: 0.85)
+                        self.shadowView.layer.shadowOpacity = 0
+                        
         })
         
-        UIView.animate(withDuration: 1,
+        UIView.animate(withDuration: 0.7,
                        delay: 0,
                        animations: {
-                        self.shadowView.transform = .init(scaleX: 1, y: 1)
+                        self.shadowView.transform = .init (scaleX: 1, y: 1)
+                        self.shadowView.layer.shadowOpacity = 1
         })
     }
     
