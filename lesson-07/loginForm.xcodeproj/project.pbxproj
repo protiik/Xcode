@@ -21,6 +21,7 @@
 		9C4AC88C23F1864B00BFF5E7 /* FriendsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4AC88B23F1864B00BFF5E7 /* FriendsCollectionCell.swift */; };
 		9C4AC88F23F1A0ED00BFF5E7 /* friendsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4AC88E23F1A0ED00BFF5E7 /* friendsStruct.swift */; };
 		9C4AC89123F1B19B00BFF5E7 /* FriendCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4AC89023F1B19B00BFF5E7 /* FriendCollectionController.swift */; };
+		9C5DD2C92409C97D00CADCA8 /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5DD2C82409C97D00CADCA8 /* PictureViewController.swift */; };
 		9C6C403D24052C7600460F66 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C6C403C24052C7600460F66 /* SettingsViewController.swift */; };
 		9C761E7423E1EBE00090FB56 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C761E7323E1EBE00090FB56 /* AppDelegate.swift */; };
 		9C761E7623E1EBE00090FB56 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C761E7523E1EBE00090FB56 /* SceneDelegate.swift */; };
@@ -44,6 +45,7 @@
 		9C4AC88B23F1864B00BFF5E7 /* FriendsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsCollectionCell.swift; sourceTree = "<group>"; };
 		9C4AC88E23F1A0ED00BFF5E7 /* friendsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = friendsStruct.swift; sourceTree = "<group>"; };
 		9C4AC89023F1B19B00BFF5E7 /* FriendCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendCollectionController.swift; sourceTree = "<group>"; };
+		9C5DD2C82409C97D00CADCA8 /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PictureViewController.swift; path = loginForm/PictureViewController.swift; sourceTree = SOURCE_ROOT; };
 		9C6C403C24052C7600460F66 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9C761E7023E1EBE00090FB56 /* loginForm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loginForm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C761E7323E1EBE00090FB56 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				9C2E835F24007D2F00BD244F /* NewsViewController.swift */,
+				9C5DD2C82409C97D00CADCA8 /* PictureViewController.swift */,
 				9C4AC87623F165E300BFF5E7 /* FriendsTableViewController.swift */,
 				9C4AC89023F1B19B00BFF5E7 /* FriendCollectionController.swift */,
 				9C4AC87823F167FF00BFF5E7 /* SubscriptionTableViewController.swift */,
@@ -212,6 +215,7 @@
 				9C2E836224007E5900BD244F /* NewsCell.swift in Sources */,
 				9C761E7423E1EBE00090FB56 /* AppDelegate.swift in Sources */,
 				9C4AC88A23F1858000BFF5E7 /* GroupsCell.swift in Sources */,
+				9C5DD2C92409C97D00CADCA8 /* PictureViewController.swift in Sources */,
 				9C6C403D24052C7600460F66 /* SettingsViewController.swift in Sources */,
 				9C4AC87723F165E300BFF5E7 /* FriendsTableViewController.swift in Sources */,
 				9C761E7623E1EBE00090FB56 /* SceneDelegate.swift in Sources */,

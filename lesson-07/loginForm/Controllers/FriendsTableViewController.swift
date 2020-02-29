@@ -56,14 +56,11 @@ class FriendsTableViewController: UITableViewController{
         //Сортировка
         let groupedDictionary = Dictionary(grouping: nameFriend, by: {String($0.prefix(1))})
         
-        //print(groupedDictionary)
         let keys = groupedDictionary.keys.sorted()
-        //print(keys)
         
+
         sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
         tableView.reloadData()
-        //print(sections)
-        //Сортировка
         
         
         
@@ -243,7 +240,7 @@ class FriendsTableViewController: UITableViewController{
     
     
 }
-// Поиск, реализация ху-вая но я по другому неумею
+// Поиск
 extension FriendsTableViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

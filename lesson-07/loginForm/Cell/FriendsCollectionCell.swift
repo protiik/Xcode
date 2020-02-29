@@ -10,6 +10,7 @@ import UIKit
 
 class FriendsCollectionCell: UICollectionViewCell {
     
+    
     @IBOutlet var friendImageView: UIImageView!
     @IBOutlet var likeImage: UIImageView!
     @IBOutlet var countLikeLabel: UILabel!
@@ -18,14 +19,12 @@ class FriendsCollectionCell: UICollectionViewCell {
     
     override func layoutSublayers(of layer: CALayer) {
         
-        
-        
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTap(_:)))
+        
+    
         
         likeImage.isUserInteractionEnabled = true
         likeImage.addGestureRecognizer(tapGesture)
-        
-        
         
     }
     
@@ -37,12 +36,12 @@ class FriendsCollectionCell: UICollectionViewCell {
             print("Like")
             //пружинка
             UIView.animate(withDuration: 0.5,
-                                 delay: 0,
-                                 usingSpringWithDamping: 0.2,
-                                 initialSpringVelocity: 15,
-                                 animations: {
-                                  self.likeImage.transform = .init(scaleX: 0.8, y: 0.8)
-                  })
+                           delay: 0,
+                           usingSpringWithDamping: 0.2,
+                           initialSpringVelocity: 15,
+                           animations: {
+                            self.likeImage.transform = .init(scaleX: 0.8, y: 0.8)
+            })
             //возврат размера
             UIView.animate(withDuration: 0.5,
                            delay: 0,
@@ -66,12 +65,12 @@ class FriendsCollectionCell: UICollectionViewCell {
             print("- Like")
             //
             UIView.animate(withDuration: 0.5,
-                                 delay: 0,
-                                 usingSpringWithDamping: 0.2,
-                                 initialSpringVelocity: 15,
-                                 animations: {
-                                  self.likeImage.transform = .init(scaleX: 0.8, y: 0.8)
-                  })
+                           delay: 0,
+                           usingSpringWithDamping: 0.2,
+                           initialSpringVelocity: 15,
+                           animations: {
+                            self.likeImage.transform = .init(scaleX: 0.8, y: 0.8)
+            })
             //
             UIView.animate(withDuration: 0.5,
                            delay: 0,
@@ -89,6 +88,10 @@ class FriendsCollectionCell: UICollectionViewCell {
             
         }
     }
+    
+   
+    
+    
     // Стартовые значения аутлетов при переиспользовании ячейки
     override func prepareForReuse() {
         super.prepareForReuse()

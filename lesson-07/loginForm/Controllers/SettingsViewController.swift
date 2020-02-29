@@ -51,5 +51,8 @@ class SettingsViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    @IBAction func exit(unwindSegue: UIStoryboardSegue) {
+    print("Welocme back")
+    }
     
 }

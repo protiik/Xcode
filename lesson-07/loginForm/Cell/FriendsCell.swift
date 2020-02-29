@@ -36,6 +36,7 @@ class FriendsCell: UITableViewCell {
                        animations: {
                         self.shadowView.transform = .init (scaleX: 0.85, y: 0.85)
                         self.shadowView.layer.shadowOpacity = 0
+                        self.shadowView.layer.shadowRadius = 0
                         
         })
         
@@ -44,6 +45,7 @@ class FriendsCell: UITableViewCell {
                        animations: {
                         self.shadowView.transform = .init (scaleX: 1, y: 1)
                         self.shadowView.layer.shadowOpacity = 1
+                        self.shadowView.layer.shadowRadius = 6
         })
     }
     
@@ -61,7 +63,7 @@ class FriendsCell: UITableViewCell {
     
     @IBInspectable var color:UIColor = .black
     @IBInspectable var opacity:Float = 1
-    @IBInspectable var radius:CGFloat = 10
+    @IBInspectable var radius:CGFloat = 7
     
     func animation() {
         layer.cornerRadius = 34
