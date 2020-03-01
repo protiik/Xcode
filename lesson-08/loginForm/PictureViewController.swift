@@ -51,9 +51,6 @@ class PictureViewController: UIViewController {
     func animateReduceOne () {
         self.imagesFriendTwo.transform = CGAffineTransform(translationX: 500, y: 0)
         self.imagesFriendTwo.transform = .init(scaleX: 0.8, y: 0.8)
-        print("убрать 1 картинку")
-        
-        
         
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: [], animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.25, animations: {
@@ -74,10 +71,6 @@ class PictureViewController: UIViewController {
         self.imagesFriendTwo.transform = CGAffineTransform(translationX: -400, y: 0)
         self.imagesFriendTwo.transform = .init(scaleX: 0.8, y: 0.8)
         
-        print("1убрать 1 картинку")
-        
-        
-        
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: [], animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.25, animations: {
                 self.imagesFriendOne.transform = CGAffineTransform(translationX: 400, y: 0)
@@ -97,7 +90,6 @@ class PictureViewController: UIViewController {
     
     func animateReduceTwo() {
         self.imagesFriendOne.transform = .init(scaleX: 0.8, y: 0.8)
-        print("Убрать вторую картинку")
         
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: [], animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.25, animations: {
@@ -116,10 +108,6 @@ class PictureViewController: UIViewController {
     func animateReverseTwo () {
         self.imagesFriendOne.transform = CGAffineTransform(translationX: -400, y: 0)
         self.imagesFriendOne.transform = .init(scaleX: 0.8, y: 0.8)
-        
-        print("1убрать 1 картинку")
-        
-        
         
         UIView.animateKeyframes(withDuration: 1, delay: 0, options: [], animations: {
             UIView.addKeyframe(withRelativeStartTime: 0, relativeDuration: 0.25, animations: {
