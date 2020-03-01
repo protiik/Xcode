@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginFormController: UIViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textFieldLogin: UITextField!
@@ -25,16 +25,43 @@ class ViewController: UIViewController {
             scrollView.addGestureRecognizer(tapGesture) // закрытие клавитуры
         }
         
-    @IBAction func buttonInTap(_ sender: Any) {
-        let login = textFieldLogin.text
-        let pass = textFieldPass.text
+    
+    func showInError() {
         
-        if login == "admin" && pass == "admin" {
-            labelLogin.text = "Успешная авторизация"
-        }else {
-            labelLogin.text = "Неверный логин или пароль"
+        let alertVC = UIAlertController(title: "Ошибка", message: "Неверный логин или пароль", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default) { _ in
+            print("Ок clicked")
         }
+        alertVC.addAction(action)
+        
+        present(alertVC, animated: true, completion: nil)
+        }
+    
+    func checkLogin() -> Bool {
+        if let login = textFieldLogin.text,
+            let pass = textFieldPass.text {
+                      
+            if login == "admin", pass == "admin" {
+                print("Успешная авторизация")
+                return true
+            }else {
+                print("Не успешная авторизация")
+                return false
+            }
+               };return false
     }
+    
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if checkLogin(){
+            return true
+        }else{
+            showInError()
+            return false
+        }
+        
+    }
+    
     
         
         
@@ -68,17 +95,11 @@ class ViewController: UIViewController {
         @objc func hideKeyboard() {
             self.scrollView.endEditing(true)
         }
+    
+        @IBAction func exit( unwindSegue: UIStoryboardSegue) {
+        print("Welocme back")
+        }   
 
-            
-
-        
-        
-        
-        
-        
-        
-        
-        
     }
 
 
