@@ -14,10 +14,6 @@ class FriendsTableViewController: UITableViewController{
     
     @IBOutlet weak var searhBar: UISearchBar!
     
-    
-    
-    
-    
     var sections = [Section]()
     var searchFriend = [Search]()
     
@@ -60,14 +56,11 @@ class FriendsTableViewController: UITableViewController{
         //Сортировка
         let groupedDictionary = Dictionary(grouping: nameFriend, by: {String($0.prefix(1))})
         
-        //print(groupedDictionary)
         let keys = groupedDictionary.keys.sorted()
-        //print(keys)
         
+
         sections = keys.map{ Section(letter: $0, names: groupedDictionary[$0]!.sorted()) }
         tableView.reloadData()
-        //print(sections)
-        //Сортировка
         
         
         
@@ -247,7 +240,7 @@ class FriendsTableViewController: UITableViewController{
     
     
 }
-// Поиск, реализация ху-вая но я по другому неумею
+// Поиск
 extension FriendsTableViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -257,7 +250,7 @@ extension FriendsTableViewController : UISearchBarDelegate {
             searchMassive.append(i.name)
         }
         //Поиск
-        searchAns = searchMassive.filter({$0.prefix(searchText.count) == searchText})
+        searchAns = searchMassive.filter({$0.contains(searchText)})
         //Сортировка под новую структуру
         let groupedDictionary = Dictionary(grouping: searchAns, by: {String($0.prefix(1))})
         let keys = groupedDictionary.keys.sorted()
