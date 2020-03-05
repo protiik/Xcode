@@ -29,24 +29,35 @@ class FriendsCell: UITableViewCell {
     @objc func onTap(_ sender: UITapGestureRecognizer){
         print("Сжимаем картинку")
         
-        UIView.animate(withDuration: 0.7,
+        
+        UIView.animate(withDuration: 2,
                        delay: 0,
-                       usingSpringWithDamping: 0.3,
-                       initialSpringVelocity: 20,
+                       usingSpringWithDamping: 0.8,
+                       initialSpringVelocity: 10,
                        animations: {
                         self.shadowView.transform = .init (scaleX: 0.85, y: 0.85)
                         self.shadowView.layer.shadowOpacity = 0
                         self.shadowView.layer.shadowRadius = 0
                         
         })
+        UIView.animate(withDuration: 0.7,
+                       delay: 1,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 10,
+                        animations: {
+                            self.shadowView.transform = .init(scaleX: 1.2, y: 1.2)
+                            self.shadowView.layer.shadowOpacity = 1
+                            self.shadowView.layer.shadowRadius = 10
+                            
+        })
         
         UIView.animate(withDuration: 0.7,
-                       delay: 0,
+                       delay: 2,
                        animations: {
                         self.shadowView.transform = .init (scaleX: 1, y: 1)
                         self.shadowView.layer.shadowOpacity = 1
                         self.shadowView.layer.shadowRadius = 6
-        })
+        })		
     }
     
     override func prepareForReuse() {

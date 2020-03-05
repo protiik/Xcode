@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0740F918240F904500444C42 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0740F917240F904500444C42 /* CustomNavigationController.swift */; };
+		0740F91A240F96DA00444C42 /* CustomPushAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0740F919240F96DA00444C42 /* CustomPushAnimator.swift */; };
+		076A9C512410EC6200B3CC72 /* CustomInteractiveTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076A9C502410EC6200B3CC72 /* CustomInteractiveTransition.swift */; };
 		9C2E833923FFCCB000BD244F /* testTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E833823FFCCB000BD244F /* testTableViewHeader.swift */; };
 		9C2E833B23FFD83300BD244F /* TestTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C2E833A23FFD83300BD244F /* TestTableViewHeader.xib */; };
 		9C2E836024007D2F00BD244F /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C2E835F24007D2F00BD244F /* NewsViewController.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0740F917240F904500444C42 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
+		0740F919240F96DA00444C42 /* CustomPushAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPushAnimator.swift; sourceTree = "<group>"; };
+		076A9C502410EC6200B3CC72 /* CustomInteractiveTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInteractiveTransition.swift; sourceTree = "<group>"; };
 		9C2E833823FFCCB000BD244F /* testTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testTableViewHeader.swift; sourceTree = "<group>"; };
 		9C2E833A23FFD83300BD244F /* TestTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestTableViewHeader.xib; sourceTree = "<group>"; };
 		9C2E835F24007D2F00BD244F /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +73,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		076A9C522410F55700B3CC72 /* AnimateNavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				0740F917240F904500444C42 /* CustomNavigationController.swift */,
+				0740F919240F96DA00444C42 /* CustomPushAnimator.swift */,
+				076A9C502410EC6200B3CC72 /* CustomInteractiveTransition.swift */,
+			);
+			path = AnimateNavigationController;
+			sourceTree = "<group>";
+		};
 		9C43514D23F2C12100FBFC58 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +114,8 @@
 				9C4AC88723F1855000BFF5E7 /* FriendsCell.swift */,
 				9C4AC88923F1858000BFF5E7 /* GroupsCell.swift */,
 				9C4AC88B23F1864B00BFF5E7 /* FriendsCollectionCell.swift */,
+				9C2E833823FFCCB000BD244F /* testTableViewHeader.swift */,
+				9C2E833A23FFD83300BD244F /* TestTableViewHeader.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -121,17 +139,16 @@
 		9C761E7223E1EBE00090FB56 /* loginForm */ = {
 			isa = PBXGroup;
 			children = (
-				9C761E7323E1EBE00090FB56 /* AppDelegate.swift */,
-				9C761E7523E1EBE00090FB56 /* SceneDelegate.swift */,
+				076A9C522410F55700B3CC72 /* AnimateNavigationController */,
 				9C4AC87E23F1698B00BFF5E7 /* Controllers */,
 				9C4AC88D23F1865800BFF5E7 /* Cell */,
 				9C43514D23F2C12100FBFC58 /* Model */,
 				9C761E7923E1EBE00090FB56 /* Main.storyboard */,
-				9C2E833823FFCCB000BD244F /* testTableViewHeader.swift */,
-				9C2E833A23FFD83300BD244F /* TestTableViewHeader.xib */,
 				9C761E7C23E1EBE10090FB56 /* Assets.xcassets */,
 				9C761E7E23E1EBE10090FB56 /* LaunchScreen.storyboard */,
 				9C761E8123E1EBE10090FB56 /* Info.plist */,
+				9C761E7323E1EBE00090FB56 /* AppDelegate.swift */,
+				9C761E7523E1EBE00090FB56 /* SceneDelegate.swift */,
 			);
 			path = loginForm;
 			sourceTree = "<group>";
@@ -216,10 +233,13 @@
 				9C761E7423E1EBE00090FB56 /* AppDelegate.swift in Sources */,
 				9C4AC88A23F1858000BFF5E7 /* GroupsCell.swift in Sources */,
 				9C5DD2C92409C97D00CADCA8 /* PictureViewController.swift in Sources */,
+				076A9C512410EC6200B3CC72 /* CustomInteractiveTransition.swift in Sources */,
+				0740F91A240F96DA00444C42 /* CustomPushAnimator.swift in Sources */,
 				9C6C403D24052C7600460F66 /* SettingsViewController.swift in Sources */,
 				9C4AC87723F165E300BFF5E7 /* FriendsTableViewController.swift in Sources */,
 				9C761E7623E1EBE00090FB56 /* SceneDelegate.swift in Sources */,
 				9C4AC87D23F168BC00BFF5E7 /* AllGroupsTableController.swift in Sources */,
+				0740F918240F904500444C42 /* CustomNavigationController.swift in Sources */,
 				9C4AC88F23F1A0ED00BFF5E7 /* friendsStruct.swift in Sources */,
 				9C4AC87923F167FF00BFF5E7 /* SubscriptionTableViewController.swift in Sources */,
 				9C2E836024007D2F00BD244F /* NewsViewController.swift in Sources */,
